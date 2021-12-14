@@ -1,8 +1,9 @@
 
 import './App.css';
-import {Routes, Route, Link } from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import Landing from './pages/Landing'
 import Gamepage from './pages/Gamepage';
+
 
 
 function App() {
