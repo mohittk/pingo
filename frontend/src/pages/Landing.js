@@ -6,6 +6,7 @@ import Branding from "../components/branding/branding";
 import Button from "../components/button/button";
 import { useState } from "react";
 import io from "socket.io-client";
+import JoinPage from "./JoinPage";
 
 const socket = io.connect("http://localhost:3001");
 
@@ -54,6 +55,9 @@ const Landing = () => {
   const Redirect = () => {
     history("./game");
   };
+  const join_page = () =>{
+    history("./")
+  }
 
   return (
     <>
@@ -61,7 +65,8 @@ const Landing = () => {
       <div className="content">
         <Button text="Create" click={Redirect} />
         <Button text="Join" click={onclick} />
-        {input ? <Box /> : null}
+        {input ? <Box /> : <JoinPage socket={socket} room={room} />
+        }
       </div>
       {/* <button className="create-button" onClick={redirect} > Create</button>
         <button className="join-button" onClick={redirect}> Join </button> */}
